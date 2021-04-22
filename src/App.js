@@ -27,6 +27,7 @@ function App() {
   const [nextSongI, setNextSongI] = useState(currentSongI + 1);
 
   useEffect(()=>{
+  //the following song will be updated to our current song
     setNextSongI(()=>{
       if(currentSongI +1 > songs.length -1){
         return 0;
@@ -35,6 +36,7 @@ function App() {
       }
     })
   },[currentSongI]);
+  //[optimisation to compare with the initial value ->currentSongI]
 
   return (
     <div className="App">
