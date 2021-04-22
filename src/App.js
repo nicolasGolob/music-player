@@ -30,6 +30,7 @@ function App() {
   //the following song will be updated to our current song
     setNextSongI(()=>{
       if(currentSongI +1 > songs.length -1){
+        //length ->reminder : of the number of "codets -> to compare
         return 0;
       }else{
         return currentSongI +1;
