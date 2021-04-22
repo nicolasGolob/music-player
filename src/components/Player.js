@@ -43,10 +43,10 @@ const Player = (props) => {
 
     return(
         <div className="component-player">
-            <audio ref={audioElement}></audio>
-            <PlayerDetails song={props.song}/>
+            <audio src={props.songs[props.currentSongI].src}ref={audioElement}></audio>
+            <PlayerDetails song={props.songs[props.currentSongI]}/>
             <PlayerControler />
-            <p><strong>Next up : </strong>{props.nextSong.title} by {props.nextSong.artist}</p>
+            <p><strong>Next up : </strong>{props.songs[props.title]} by {props.songs[props.artist]}</p>
         </div>
     )
 }
