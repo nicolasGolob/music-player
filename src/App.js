@@ -1,8 +1,8 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Player from './components/Player'
 
 function App() {
-  const [songs, setSongs] = useState([
+  const [songs] = useState([
     {
       title:"Husk",
       artist:"Black Foxxes",
@@ -26,9 +26,19 @@ function App() {
   const [currentSongI, setCurrentSongI] = useState(0);
   const [nextSongI, setNextSongI] = useState(currentSongI + 1);
 
+  useEffect(()=>{
+    setNextSongI(()=>{
+      if(currentSongI +1 > songs.length -1){
+        return 0;
+      }else{
+        return currentSongI +1;
+      }
+    })
+  },[currentSongI]);
+
   return (
     <div className="App">
-      <Player song={songs[currentSongI]} nextSong={songs[nextSongI]} />
+      <Player currentSongI={currentSongI} setCurrentSongI={setCurrentSongI} nextSongI={nextSongI} songs={songs}/>
       {/* songs Hook + browses [currentSongI Hook] -> use table to browses different values  */}
     </div>
   );
