@@ -32,6 +32,8 @@ body{
 
 .details-img, img{
     border-radius: 3px;
+    max-width:260px;
+    max-height:260px;
 }
 
 .details-title{

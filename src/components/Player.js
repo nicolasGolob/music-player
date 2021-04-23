@@ -17,8 +17,8 @@ const Player = (props) => {
         }
     })
 
-    const skipSong = (forwards=true) =>{
-        //skiSong ->  to manage the flow of music played
+    const SkipSong = (forwards=true) =>{
+        //SkipSong ->  to manage the flow of music played
         if(forwards){
             props.setCurrentSongI(()=>{
                 //create temporary variable 'temp' to manage music
@@ -53,7 +53,7 @@ const Player = (props) => {
             <PlayerControler 
                 isPlaying={isPlaying} 
                 setIsPlaying={setIsPlaying} 
-                skipSong={skipSong}
+                SkipSong={SkipSong}
             />
             <p><strong>Next up : </strong>{props.songs[props.nextSongI].title} by {props.songs[props.nextSongI].artist}</p>
             {/* the props created in this page connected to the props of the app page  */}
