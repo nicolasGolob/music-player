@@ -3,7 +3,6 @@ import PlayerDetails from './PlayerDetails'
 import PlayerControler from './PlayerControler'
 
 const Player = (props) => {
-
     const audioElement = useRef(null); 
     //audioElement create for ref values <audio>
     const [isPlaying, setIsPlaying] = useState(false);
